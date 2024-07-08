@@ -1,0 +1,99 @@
+﻿/* styles.css */
+
+:root {
+    --glow-color: hsl(322 100% 69%);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    font-family: "Raleway", sans-serif;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.glowing-title {
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+    .glowing-title span {
+        position: relative;
+        display: inline-block;
+        animation: glow 1.5s infinite alternate;
+    }
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px var(--glow-color), 0 0 20px var(--glow-color), 0 0 30px var(--glow-color);
+    }
+
+    to {
+        text-shadow: 0 0 20px var(--glow-color), 0 0 30px var(--glow-color), 0 0 40px var(--glow-color);
+    }
+}
+
+.success-message {
+    margin-top: 2em;
+    font-size: 2em;
+    text-align: center;
+    opacity: 1;
+    position: relative;
+    animation: text-glow 2s ease-in-out infinite;
+}
+
+@keyframes text-glow {
+    0% {
+        opacity: 1;
+        text-shadow: 0 0 10px var(--glow-color), 0 0 20px var(--glow-color), 0 0 30px var(--glow-color);
+    }
+
+    50% {
+        opacity: 0.5;
+        text-shadow: none;
+    }
+
+    100% {
+        opacity: 1;
+        text-shadow: 0 0 10px var(--glow-color), 0 0 20px var(--glow-color), 0 0 30px var(--glow-color);
+    }
+}
+
+.success-icon {
+    width: 100px;
+    height: 100px;
+    margin-top: 1em;
+    animation: icon-fade 2s ease-in-out infinite;
+    background-color: green;
+}
+
+@keyframes icon-fade {
+    0% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.3;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .success-icon {
+        width: 80px;
+        height: 80px;
+    }
+}

@@ -1,0 +1,4 @@
+﻿Abstract class nedir?
+methodların içinin doldurulduğu classlar
+interfacede methodun sadece imzası atılıyor
+abstract classda ise o methodun içide dolduruluyor
